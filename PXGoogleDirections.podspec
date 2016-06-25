@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     s.requires_arc          = true
     s.libraries             = "c++", "icucore", "z"
     s.frameworks            = "Accelerate", "AVFoundation", "CoreBluetooth", "CoreData", "CoreLocation", "CoreText", "Foundation", "GLKit", "ImageIO", "OpenGLES", "QuartzCore", "Security", "SystemConfiguration", "CoreGraphics", "GoogleMaps"
-    s.resource              = 'Dependencies/GoogleMaps.framework/Resources/GoogleMaps.bundle'
+    s.resource              = 'Dependencies/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle'
     s.vendored_frameworks   = "Dependencies/GoogleMaps.framework"
     s.xcconfig              = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/PXGoogleDirections/Dependencies' }
 end
