@@ -62,7 +62,7 @@ class ResultsViewController: UIViewController {
 				results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.lightGrayColor(), strokeWidth: 3.0)
 			}
 		}
-		mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(results[routeIndex].bounds, withPadding: 40.0))
+		mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(results[routeIndex].bounds!, withPadding: 40.0))
 		results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purpleColor(), strokeWidth: 4.0)
 		results[routeIndex].drawOriginMarkerOnMap(mapView, title: "Origin", color: UIColor.greenColor(), opacity: 1.0, flat: true)
 		results[routeIndex].drawDestinationMarkerOnMap(mapView, title: "Destination", color: UIColor.redColor(), opacity: 1.0, flat: true)
@@ -108,7 +108,7 @@ extension ResultsViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let step = results[routeIndex].legs[indexPath.section].steps[indexPath.row]
-		mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(step.bounds, withPadding: 40.0))
+		mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(step.bounds!, withPadding: 40.0))
 	}
 	
 	func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
